@@ -2,6 +2,56 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet/less', type="text/css", href='/stylesheets/bootstrap/bootstrap.less')
+    link(rel='stylesheet/less', type="text/css", href='/stylesheets/style.less')
+
+    script(type='text/javascript', src='/javascripts/jquery.js')
+    script(type='text/javascript', src='/javascripts/html5shiv.js')
+    script(type='text/javascript', src='/javascripts/less.min.js')
+    script(type='text/javascript', src='/javascripts/site.js')
   body
-    block content
+    .side
+
+      #accordion.panel-group
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#colors')
+                | Colors
+          #colors.panel-collapse.collapse.in
+            .panel-body
+              label brand warning
+              input(type="text", class="form-control input-sm" placeholder="#f0ad4e" data-var="@brand-warning")
+
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#typography')
+                | Typography
+          #typography.panel-collapse.collapse
+            .panel-body
+
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#patterns')
+                | Patterns
+          #patterns.panel-collapse.collapse
+            .panel-body
+
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#template')
+                | Template
+          #template.panel-collapse.collapse
+            .panel-body
+
+
+        br
+        button(class='btn btn-primary btn-block') Apply
+    .main
+      block content
+
+
+  script(type='text/javascript')
