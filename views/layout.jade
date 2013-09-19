@@ -9,6 +9,7 @@ html
     script(type='text/javascript', src='/javascripts/html5shiv.js')
     script(type='text/javascript', src='/javascripts/less.min.js')
     script(type='text/javascript', src='/javascripts/site.js')
+    script(type='text/javascript', src='/javascripts/bootstrap.min.js')
   body
     .side
 
@@ -17,11 +18,47 @@ html
           .panel-heading
             h4.panel-title
               a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#colors')
+                | Palette
+          #palette.panel-collapse.collapse.in
+            .panel-body
+              a.queen(href='#queen')
+                div(style='height: 20px; width: 37px; background: #170503; float: left;')
+                div(style='height: 20px; width: 37px; background: #621718; float: left;')
+                div(style='height: 20px; width: 37px; background: #A47D4D; float: left;')
+                div(style='height: 20px; width: 37px; background: #B0A081; float: left;')
+                div(style='height: 20px; width: 37px; background: #DAC3A8; float: left;')
+
+              a.lala(href='#lala')
+                div(style='height: 20px; width: 37px; background: #FF6600; float: left;')
+                div(style='height: 20px; width: 37px; background: #FF9900; float: left;')
+                div(style='height: 20px; width: 37px; background: #FFCC00; float: left;')
+                div(style='height: 20px; width: 37px; background: #FFFF00; float: left;')
+                div(style='height: 20px; width: 37px; background: #00CC00; float: left;')
+
+              a.curtains(href='#curtains')
+                div(style='height: 20px; width: 37px; background: #316DAD; float: left;')
+                div(style='height: 20px; width: 37px; background: #4673A2; float: left;')
+                div(style='height: 20px; width: 37px; background: #4A698A; float: left;')
+                div(style='height: 20px; width: 37px; background: #455A71; float: left;')
+                div(style='height: 20px; width: 37px; background: #716C45; float: left;')
+        .panel.panel-default
+          .panel-heading
+            h4.panel-title
+              a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#colors')
                 | Colors
           #colors.panel-collapse.collapse.in
             .panel-body
-              label brand warning
+              label primary
+              input(type="text", class="form-control input-sm" placeholder="#f0ad4e" data-var="@brand-primary")
+              label success
+              input(type="text", class="form-control input-sm" placeholder="#f0ad4e" data-var="@brand-success")
+              label info
+              input(type="text", class="form-control input-sm" placeholder="#f0ad4e" data-var="@brand-info")
+              label warning
               input(type="text", class="form-control input-sm" placeholder="#f0ad4e" data-var="@brand-warning")
+              label danger
+              input(type="text", class="form-control input-sm" placeholder="#f0ad4e" data-var="@brand-danger")
+
 
         .panel.panel-default
           .panel-heading
@@ -30,7 +67,14 @@ html
                 | Typography
           #typography.panel-collapse.collapse
             .panel-body
+              label sans serif
+              input(type="text", class="form-control input-sm" placeholder="'Helvetica Neue', Helvetica, Arial, sans-serif" data-var="@font-family-sans-serif")
 
+              label serif
+              input(type="text", class="form-control input-sm" placeholder="Georgia, 'Times New Roman', Times, serif" data-var="@font-family-serif")
+
+              label size
+              input(type="text", class="form-control input-sm" placeholder="14px" data-var="@font-size-base")
         .panel.panel-default
           .panel-heading
             h4.panel-title
@@ -38,6 +82,7 @@ html
                 | Patterns
           #patterns.panel-collapse.collapse
             .panel-body
+              h2 COMING SOON!
 
         .panel.panel-default
           .panel-heading
@@ -46,10 +91,11 @@ html
                 | Template
           #template.panel-collapse.collapse
             .panel-body
+              h2 COMING SOON!
 
 
         br
-        button(class='btn btn-primary btn-block') Apply
+        button(id='apply', class='btn btn-primary btn-block') Apply
     .main
       block content
 
